@@ -101,6 +101,14 @@ a:hover {
   gap: 30px;
 }
 
+.draver {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  list-style: none;
+  gap: 30px;
+}
+
 .hamburger-icon.open span:first-child {
   transform: rotate(45deg) translate(10px, 5px);
 }

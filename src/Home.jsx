@@ -66,18 +66,20 @@ const Home = () => {
             direction="right"
             classNameName="bla bla bla drawer"
           >
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#experience">Experience</a>
-            </li>
-            <li>
-              <a href="#projects">Projects</a>
-            </li>
-            <li>
-              <a href="#contact">Contact</a>
-            </li>
+            <div className="draver">
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#experience">Experience</a>
+              </li>
+              <li>
+                <a href="#projects">Projects</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </div>
           </Drawer>
         </div>
       </nav>
