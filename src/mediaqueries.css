@@ -9,10 +9,21 @@
   #contact,
   #projects {
     height: fit-content;
+    margin-top: 0px !important;
   }
 
   #experience {
     height: 96vh !important;
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .about-containers {
+    flex-wrap: wrap-reverse;
+  }
+
+  #contact {
+    margin-top: 300px;
   }
 }
 
@@ -131,5 +142,32 @@
 
   #experience {
     height: 125vh !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .project-img{
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 370px) {
+  .contact-info-upper-container p {
+    font-size: 0.75rem;
+    padding-top: 5px;
+  }
+}
+
+@media screen and (max-width: 330px) {
+  .project-img{
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .contact-info-upper-container {
+    padding: 20px;
   }
 }

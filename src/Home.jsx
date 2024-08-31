@@ -5,15 +5,18 @@ import "react-modern-drawer/dist/index.css";
 import pic1 from "./assets/profile-pic.png";
 import pic2 from "./assets/linkedin.png";
 import pic3 from "./assets/github.png";
-import pic4 from "./assets/about-pic.png";
+import pic4 from "./assets/me.jpg";
 import pic5 from "./assets/experience.png";
 import pic6 from "./assets/education.png";
 import pic8 from "./assets/checkmark.png";
-import pic9 from "./assets/project-1.png";
-import pic10 from "./assets/project-2.png";
-import pic11 from "./assets/project-3.png";
 import pic12 from "./assets/email.png";
 import pic13 from "./assets/telegram.webp";
+import me2 from "./assets/me2.png";
+
+import tetra from "./assets/tetra textile.jpg";
+import cambridge from "./assets/cambridge.png";
+import edurate from "./assets/EduRate.png";
+import lms from "./assets/lms.jpg";
 
 import resume from "./assets/resume.pdf";
 
@@ -87,10 +90,12 @@ const Home = () => {
           <h1 className="title">Akbarshoh Ismatov</h1>
           <p className="section__text__p2">Frontend Developer</p>
           <div className="btn-container">
-            <a download="Ismatov Akbarshoh Resume" target='_blank' href={resume}>
-              <button className="btn btn-color-2">
-                Download CV
-              </button>
+            <a
+              download="Ismatov Akbarshoh Resume"
+              target="_blank"
+              href={resume}
+            >
+              <button className="btn btn-color-2">Download CV</button>
             </a>
             <a href="#contact">
               <button className="btn btn-color-1">Contact Info</button>
@@ -114,9 +119,9 @@ const Home = () => {
         <p className="section__text__p1">Get To Know More</p>
         <h1 className="title">About Me</h1>
         <div className="section-container">
-          <div className="section__pic-container">
-            <img src={pic4} alt="Profile picture" className="about-pic" />
-          </div>
+          {/* <div className="section__pic-container">
+            <img src={me2} alt="Profile picture" className="about-pic" />
+          </div> */}
           <div className="about-details-container">
             <div className="about-containers">
               <div className="details-container">
@@ -242,10 +247,10 @@ const Home = () => {
           <div className="about-containers">
             <div className="details-container color-container">
               <div className="project-picture">
-                <img src={pic9} alt="Project 1" className="project-img" />
+                <img src={tetra} alt="Project 1" className="project-img" />
               </div>
               <h2 className="experience-sub-title project-title">
-                Project One
+                Tetra Textile
               </h2>
               <div className="btn-container">
                 <button className="btn btn-color-2 project-btn">Github</button>
@@ -256,13 +261,12 @@ const Home = () => {
                 </Link>
               </div>
             </div>
+
             <div className="details-container color-container">
               <div className="project-picture">
-                <img src={pic10} alt="Project 2" className="project-img" />
+                <img src={cambridge} alt="Project 2" className="project-img" />
               </div>
-              <h2 className="experience-sub-title project-title">
-                Project Two
-              </h2>
+              <h2 className="experience-sub-title project-title">Cambrdige</h2>
               <div className="btn-container">
                 <button className="btn btn-color-2 project-btn">Github</button>
                 <Link>
@@ -272,13 +276,27 @@ const Home = () => {
                 </Link>
               </div>
             </div>
+
             <div className="details-container color-container">
               <div className="project-picture">
-                <img src={pic11} alt="Project 3" className="project-img" />
+                <img src={edurate} alt="Project 3" className="project-img" />
               </div>
-              <h2 className="experience-sub-title project-title">
-                Project Three
-              </h2>
+              <h2 className="experience-sub-title project-title">EduRate</h2>
+              <div className="btn-container">
+                <button className="btn btn-color-2 project-btn">Github</button>
+                <Link>
+                  <button className="btn btn-color-2 project-btn">
+                    Live Demo
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="details-container color-container">
+              <div className="project-picture">
+                <img src={lms} alt="Project 3" className="project-img" />
+              </div>
+              <h2 className="experience-sub-title project-title">LMS</h2>
               <div className="btn-container">
                 <button className="btn btn-color-2 project-btn">Github</button>
                 <Link>

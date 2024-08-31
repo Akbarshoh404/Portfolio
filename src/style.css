@@ -135,7 +135,7 @@ section {
   min-height: fit-content;
 }
 
-#experience{
+#experience {
   height: 70vh !important;
 }
 
@@ -266,6 +266,9 @@ section {
 
 .about-pic {
   border-radius: 2rem;
+  object-fit: cover;
+  width: 400px;
+  height: 400px;
 }
 
 .arrow {
@@ -343,8 +346,9 @@ article .icon {
 
 .project-img {
   border-radius: 2rem;
-  width: 90%;
-  height: 90%;
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
 }
 
 .project-title {
