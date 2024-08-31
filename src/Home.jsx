@@ -255,8 +255,12 @@ const Home = () => {
                 Tetra Textile
               </h2>
               <div className="btn-container">
-                <button className="btn btn-color-2 project-btn">Github</button>
-                <Link>
+                <Link to="https://github.com/Akbarshoh404/Tetra-Textile">
+                  <button className="btn btn-color-2 project-btn">
+                    Github
+                  </button>
+                </Link>
+                <Link to="https://tetra-textile.netlify.app/">
                   <button className="btn btn-color-2 project-btn">
                     Live Demo
                   </button>
@@ -270,8 +274,12 @@ const Home = () => {
               </div>
               <h2 className="experience-sub-title project-title">Cambrdige</h2>
               <div className="btn-container">
-                <button className="btn btn-color-2 project-btn">Github</button>
-                <Link>
+                <Link to="https://github.com/Akbarshoh404/Cambridge-Website">
+                  <button className="btn btn-color-2 project-btn">
+                    Github
+                  </button>
+                </Link>
+                <Link to="https://cambridge-lessons.netlify.app">
                   <button className="btn btn-color-2 project-btn">
                     Live Demo
                   </button>
@@ -285,8 +293,12 @@ const Home = () => {
               </div>
               <h2 className="experience-sub-title project-title">EduRate</h2>
               <div className="btn-container">
-                <button className="btn btn-color-2 project-btn">Github</button>
-                <Link>
+                <Link to="https://github.com/BFozilkhon/EduRate">
+                  <button className="btn btn-color-2 project-btn">
+                    Github
+                  </button>
+                </Link>
+                <Link to="https://www.edurate.uz/">
                   <button className="btn btn-color-2 project-btn">
                     Live Demo
                   </button>
@@ -300,8 +312,12 @@ const Home = () => {
               </div>
               <h2 className="experience-sub-title project-title">LMS</h2>
               <div className="btn-container">
-                <button className="btn btn-color-2 project-btn">Github</button>
-                <Link>
+                <Link to="https://github.com/Akbarshoh404/LMS">
+                  <button className="btn btn-color-2 project-btn">
+                    Github
+                  </button>
+                </Link>
+                <Link to="https://lms-hogwarts.netlify.app">
                   <button className="btn btn-color-2 project-btn">
                     Live Demo
                   </button>
