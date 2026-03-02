@@ -77,6 +77,20 @@ p {
   }
 }
 
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 .fade-in {
   animation: fadeIn 1s ease forwards;
 }
@@ -96,8 +110,9 @@ p {
 
 /* NAVIGATION */
 nav {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  /* Logo, Links, Button */
   align-items: center;
   height: 10vh;
   background: var(--glass-bg);
@@ -107,6 +122,8 @@ nav {
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
   transition: background 0.5s ease, border-color 0.5s ease;
+  padding: 0 5%;
+  /* Add consistent padding for edges */
 }
 
 .nav-links {
@@ -114,6 +131,9 @@ nav {
   gap: 2rem;
   list-style: none;
   font-size: 1.2rem;
+  align-items: center;
+  /* Center items vertically in list */
+  height: 100%;
 }
 
 a {
@@ -144,6 +164,8 @@ a {
   font-weight: 700;
   cursor: pointer;
   color: var(--primary-color);
+  display: flex;
+  align-items: center;
 }
 
 .logo .highlight {
@@ -162,6 +184,8 @@ a {
   align-items: center;
   justify-content: center;
   color: var(--primary-color);
+  justify-self: end;
+  /* Push to far right in Grid */
 }
 
 .theme-btn:hover {
@@ -234,6 +258,8 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  /* Center content horizontally in section */
 }
 
 /* HERO SECTION */
@@ -258,6 +284,8 @@ section {
   box-shadow: var(--shadow-lg);
   transition: transform 0.5s;
   background-color: var(--bg-secondary);
+  animation: float 6s ease-in-out infinite;
+  /* Added float animation */
 }
 
 .section__pic-container:hover {
@@ -273,6 +301,10 @@ section {
 .section__text {
   align-self: center;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Ensure exact center */
 }
 
 .section__text__p1 {
@@ -280,6 +312,7 @@ section {
   margin-bottom: 0.5rem;
   font-weight: 500;
   color: var(--secondary-color);
+  text-align: center;
 }
 
 .title {
@@ -288,6 +321,7 @@ section {
   font-weight: 700;
   line-height: 1.1;
   color: var(--primary-color);
+  text-align: center;
 }
 
 .section__text__p2 {
@@ -295,6 +329,7 @@ section {
   margin-bottom: 2rem;
   font-weight: 500;
   color: var(--secondary-color);
+  text-align: center;
 }
 
 /* BUTTONS */
@@ -311,6 +346,7 @@ section {
   border-radius: 2rem;
   cursor: pointer;
   font-size: 1rem;
+  text-align: center;
 }
 
 .btn-color-1 {
@@ -347,7 +383,6 @@ section {
 .social-icon {
   height: 2.5rem;
   width: 2.5rem;
-  /* FIXED SIZE */
   object-fit: contain;
   transition: transform 0.3s;
 }
@@ -380,6 +415,8 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
+  /* Ensure full width for centering */
 }
 
 .details-container {
@@ -424,21 +461,56 @@ section {
   flex-direction: column;
   max-width: 900px;
   width: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .text-container {
   text-align: justify;
   margin-top: 1rem;
   padding: 0 1rem;
+  max-width: 800px;
 }
 
 /* EXPERIENCE SECTION */
+#experience {
+  height: auto !important;
+  /* Allow growing */
+  min-height: 90vh;
+  /* Minimum full screen */
+}
+
 .experience-details-container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  /* Change to row to allow side-by-side */
+  flex-wrap: wrap;
+  /* Allow wrapping */
+  gap: 2.5rem;
+  /* Increased gap */
   width: 100%;
+  margin-top: 2rem;
+  max-width: 1200px;
+  /* Limit overall width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experience-details-container .details-container {
+  flex: 1 1 300px;
+  min-width: 300px;
+  max-width: 400px;
+  /* Revert to standard size for Projects */
+}
+
+/* Specific Override for Experience Section Only */
+#experience .details-container {
+  flex: 1 0 calc(45% - 2rem);
+  /* Force 2-column wrapping */
+  min-width: 350px;
+  max-width: 800px !important;
+  /* Allow wide stretching */
 }
 
 .article-container {
@@ -497,6 +569,10 @@ article .icon {
 .project-card {
   min-width: 320px;
   max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Ensure content is spaced similarly */
 }
 
 .project-picture {
@@ -521,6 +597,15 @@ article .icon {
   color: var(--primary-color);
 }
 
+.project-desc {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+  color: var(--secondary-color);
+  flex-grow: 1;
+  /* Allow desc to take space */
+}
+
 /* CONTACT */
 .contact-info-upper-container {
   display: flex;
@@ -534,12 +619,20 @@ article .icon {
   gap: 3rem;
   box-shadow: var(--shadow-sm);
   flex-wrap: wrap;
+  /* Auto-wrap for responsiveness */
 }
 
 .contact-info-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+  /* Center content */
   gap: 1rem;
+  min-width: 200px;
+}
+
+.contact-info-container p {
+  margin: 0;
 }
 
 .contact-icon {
@@ -551,17 +644,51 @@ article .icon {
 
 /* FOOTER */
 footer {
-  height: 20vh;
+  height: 25vh;
+  /* Increased height slightly for spacing */
   margin: 0 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   border-top: 1px solid var(--border-color);
+  text-align: center;
+}
+
+footer nav {
+  display: flex;
+  /* Override grid */
+  justify-content: center;
+  background: none;
+  border: none;
+  height: auto;
+  position: static;
+  width: 100%;
+  backdrop-filter: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+footer .nav-links-container {
+  display: flex;
+  justify-content: center;
 }
 
 footer .nav-links {
-  margin-bottom: 1.5rem;
+  margin: 0;
+  /* Reset margin */
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  flex-wrap: wrap;
+  /* Allow wrapping on small screens */
+  justify-content: center;
+  height: auto;
+}
+
+footer p {
+  font-size: 0.9rem;
 }
 
 /* MEDIA QUERIES */
@@ -620,6 +747,8 @@ footer .nav-links {
   section {
     padding-top: 2rem;
     margin: 0 1rem;
+    align-items: center;
+    /* Ensure mobile sections center */
   }
 
   .about-containers {
@@ -637,6 +766,15 @@ footer .nav-links {
     gap: 1.5rem;
     width: 100%;
     padding: 2rem 1rem;
+    align-items: center;
+    /* Center flex items */
+  }
+
+  .contact-info-container {
+    flex-direction: row;
+    /* Keep icon next to text */
+    width: 100%;
+    justify-content: center;
   }
 
   .project-tabs {
@@ -657,5 +795,9 @@ footer .nav-links {
     flex-direction: column;
     gap: 1rem;
     text-align: center;
+  }
+
+  .section__text {
+    width: 100%;
   }
 }

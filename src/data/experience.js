@@ -1,6 +1,3 @@
-
-
-
 export const experienceData = [
   {
     category: "Frontend Development",
@@ -9,19 +6,29 @@ export const experienceData = [
       { name: "CSS", level: "Experienced" },
       { name: "SASS", level: "Intermediate" },
       { name: "JavaScript", level: "Experienced" },
-      { name: "TypeScript", level: "Basic" },
-      { name: "React.js", level: "Intermediate" },
+      { name: "TypeScript", level: "Intermediate" },
+      { name: "React.js", level: "Experienced" },
+      { name: "Next.js", level: "Intermediate" },
+      { name: "Tailwind CSS", level: "Intermediate" },
+    ]
+  },
+  {
+    category: "Mobile Development",
+    skills: [
+      { name: "Flutter", level: "Intermediate" },
+      { name: "Dart", level: "Intermediate" },
+      { name: "Firebase", level: "Intermediate" },
+      { name: "Android Studio", level: "Intermediate" },
     ]
   },
   {
     category: "Backend & Tools",
     skills: [
+      { name: "Node.js", level: "Intermediate" },
       { name: "PostgreSQL", level: "Basic" },
-      { name: "Node JS", level: "Intermediate" },
-      { name: "Java", level: "Basic" },
       { name: "Python", level: "Basic" },
-      { name: "Next.js", level: "Intermediate" },
-      { name: "Tailwind CSS", level: "Intermediate" },
+      { name: "Java", level: "Basic" },
+      { name: "Git & GitHub", level: "Intermediate" },
     ]
   }
 ];

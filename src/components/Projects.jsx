@@ -36,12 +36,12 @@ const Projects = () => {
               <h2 className="experience-sub-title project-title">{project.title}</h2>
               {project.description && <p className="project-desc">{project.description}</p>}
               <div className="btn-container">
-                <Link to={project.github} target="_blank">
+                <a href={project.github} target="_blank" rel="noreferrer">
                   <button className="btn btn-color-2 project-btn">Github</button>
-                </Link>
-                <Link to={project.demo} target="_blank">
+                </a>
+                <a href={project.demo} target="_blank" rel="noreferrer">
                   <button className="btn btn-color-2 project-btn">Live Demo</button>
-                </Link>
+                </a>
               </div>
             </div>
           ))}

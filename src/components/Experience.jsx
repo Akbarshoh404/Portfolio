@@ -9,7 +9,6 @@ const Experience = () => {
       <p className="section__text__p1">Explore My</p>
       <h1 className="title">Experience</h1>
       <div className="experience-details-container">
-        <div className="about-containers">
           {experienceData.map((category, index) => (
             <div className="details-container card-hover" key={index}>
               <h2 className="experience-sub-title">{category.category}</h2>
@@ -26,7 +25,6 @@ const Experience = () => {
               </div>
             </div>
           ))}
-        </div>
       </div>
     </section>
   );
