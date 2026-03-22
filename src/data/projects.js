@@ -74,7 +74,7 @@ export const mobileProjects = [
     img: "https://play-lh.googleusercontent.com/apps/test/exam_icon.png", // Placeholder
     github: "https://github.com/Akbarshoh404/exam-platform-mobile", // Placeholder link
     demo: "#",
-    description: "Comprehensive exam preparation platform for IELTS and SAT students, featuring practice tests, progress tracking, and vocabulary builders.",
+    description: "A classic Tic Tac Toe game with a clean UI, multiplayer mode, and an unbeatable AI mode for quick fun.",
   },
   {
     id: 3,
@@ -82,7 +82,7 @@ export const mobileProjects = [
     img: "https://play-lh.googleusercontent.com/apps/test/checkers_icon.png", // Placeholder
     github: "https://github.com/Akbarshoh404/checkers-android", // Placeholder link
     demo: "#",
-    description: "A classic checkers game built for Android with smooth animations, multiple themes, and a smart AI opponent for challenging gameplay.",
+    description: "A sleek Sudoku puzzle app featuring multiple difficulty levels, hint systems, and daily challenges to keep your mind sharp.",
   },
   {
     id: 4,
@@ -90,7 +90,7 @@ export const mobileProjects = [
     img: "https://play-lh.googleusercontent.com/apps/test/exam_icon.png", // Placeholder
     github: "https://github.com/Akbarshoh404/exam-platform-mobile", // Placeholder link
     demo: "#",
-    description: "Comprehensive exam preparation platform for IELTS and SAT students, featuring practice tests, progress tracking, and vocabulary builders.",
+    description: "A visually polished 2048 puzzle game with smooth sliding animations, high score tracking, and a minimalistic design.",
   },
   {
     id: 5,
@@ -98,7 +98,7 @@ export const mobileProjects = [
     img: "https://play-lh.googleusercontent.com/apps/test/checkers_icon.png", // Placeholder
     github: "https://github.com/Akbarshoh404/checkers-android", // Placeholder link
     demo: "#",
-    description: "A classic checkers game built for Android with smooth animations, multiple themes, and a smart AI opponent for challenging gameplay.",
+    description: "A fun and engaging word puzzle game inspired by Wordle, with daily challenges, beautiful color feedback, and a clean interface.",
   },
   {
     id: 6,
@@ -106,6 +106,6 @@ export const mobileProjects = [
     img: "https://play-lh.googleusercontent.com/apps/test/exam_icon.png", // Placeholder
     github: "https://github.com/Akbarshoh404/exam-platform-mobile", // Placeholder link
     demo: "#",
-    description: "Comprehensive exam preparation platform for IELTS and SAT students, featuring practice tests, progress tracking, and vocabulary builders.",
+    description: "A card matching memory game with various themes, difficulties, and a timer to test your cognitive skills.",
   },
 ];

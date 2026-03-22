@@ -4,6 +4,7 @@ import App from './App';
 import "./style.css"
 import "./mediaqueries.css"
 import { BrowserRouter } from "react-router-dom";
+import './i18n';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
