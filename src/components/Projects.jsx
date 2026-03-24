@@ -19,29 +19,40 @@ const fadeIn = (direction, type, delay, duration) => ({
 
 const Projects = () => {
   const [activeTab, setActiveTab] = useState("web");
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  // Pick the right description based on current language
+  const getDescription = (project) => {
+    const lang = i18n.language?.slice(0, 2);
+    if (lang === "ru") return project.description_ru;
+    if (lang === "uz") return project.description_uz;
+    return project.description_en;
+  };
 
   return (
     <section id="projects">
       <motion.div variants={fadeIn("up", "tween", 0.2, 1)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
-        <p className="section__text__p1">Browse My Recent</p>
-        <h1 className="title">{t("projects_title") || "Projects"}</h1>
+        <p className="section__text__p1">{t("browse_recent")}</p>
+        <h1 className="title">{t("projects_title")}</h1>
       </motion.div>
       
+      {/* Mobile Apps tab is intentionally hidden — code kept for future use */}
+      {/* 
       <div className="project-tabs">
         <button 
           className={`tab-btn clickable ${activeTab === "web" ? "active" : ""}`} 
           onClick={() => setActiveTab("web")}
         >
-          {t("web_dev") || "Web Development"}
+          {t("web_dev")}
         </button>
         <button 
           className={`tab-btn clickable ${activeTab === "mobile" ? "active" : ""}`} 
           onClick={() => setActiveTab("mobile")}
         >
-          {t("mobile_apps") || "Mobile Apps"}
+          {t("mobile_apps")}
         </button>
       </div>
+      */}
 
       <div className="experience-details-container animated-grid" style={{ flexDirection: "column", alignItems: "center" }}>
         {activeTab === "mobile" && (
@@ -61,13 +72,13 @@ const Projects = () => {
                 <img src={project.img} alt={project.title} className="project-img" />
               </div>
               <h2 className="experience-sub-title project-title">{project.title}</h2>
-              {project.description && <p className="project-desc">{project.description}</p>}
+              {getDescription(project) && <p className="project-desc">{getDescription(project)}</p>}
               <div className="btn-container">
                 <a href={project.github} target="_blank" rel="noreferrer" className="clickable">
-                  <button className="btn btn-color-2 project-btn clickable">{t("github") || "Github"}</button>
+                  <button className="btn btn-color-2 project-btn clickable">{t("github")}</button>
                 </a>
                 <a href={project.demo} target="_blank" rel="noreferrer" className="clickable">
-                  <button className="btn btn-color-2 project-btn clickable">{t("live_demo") || "Live Demo"}</button>
+                  <button className="btn btn-color-2 project-btn clickable">{t("live_demo")}</button>
                 </a>
               </div>
             </div>

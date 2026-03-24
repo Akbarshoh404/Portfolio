@@ -1,5 +1,5 @@
 import React from "react";
-import pic1 from "../assets/profile-pic.png";
+import pic1 from "../assets/hz.jpg";
 import resume from "../assets/resume.pdf";
 import pic2 from "../assets/linkedin.png";
 import pic3 from "../assets/github.png";

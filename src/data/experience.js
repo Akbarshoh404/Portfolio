@@ -1,34 +1,43 @@
 export const experienceData = [
   {
-    category: "Frontend Development",
+    category: "cat_frontend",
     skills: [
-      { name: "HTML", level: "Experienced" },
-      { name: "CSS", level: "Experienced" },
-      { name: "SASS", level: "Intermediate" },
-      { name: "JavaScript", level: "Experienced" },
-      { name: "TypeScript", level: "Intermediate" },
-      { name: "React.js", level: "Experienced" },
-      { name: "Next.js", level: "Intermediate" },
-      { name: "Tailwind CSS", level: "Intermediate" },
+      { name: "HTML", level: "level_experienced" },
+      { name: "CSS", level: "level_experienced" },
+      { name: "SASS", level: "level_intermediate" },
+      { name: "JavaScript", level: "level_experienced" },
+      { name: "TypeScript", level: "level_intermediate" },
+      { name: "React.js", level: "level_experienced" },
+      { name: "Next.js", level: "level_intermediate" },
+      { name: "Tailwind CSS", level: "level_intermediate" },
     ]
   },
   {
-    category: "Mobile Development",
+    category: "cat_mobile",
     skills: [
-      { name: "Flutter", level: "Intermediate" },
-      { name: "Dart", level: "Intermediate" },
-      { name: "Firebase", level: "Intermediate" },
-      { name: "Android Studio", level: "Intermediate" },
+      { name: "Flutter", level: "level_intermediate" },
+      { name: "Dart", level: "level_intermediate" },
+      { name: "Firebase", level: "level_intermediate" },
+      { name: "Android Studio", level: "level_intermediate" },
     ]
   },
   {
-    category: "Backend & Tools",
+    category: "cat_backend",
     skills: [
-      { name: "Node.js", level: "Intermediate" },
-      { name: "PostgreSQL", level: "Basic" },
-      { name: "Python", level: "Basic" },
-      { name: "Java", level: "Basic" },
-      { name: "Git & GitHub", level: "Intermediate" },
+      { name: "Node.js", level: "level_intermediate" },
+      { name: "PostgreSQL", level: "level_basic" },
+      { name: "Python", level: "level_basic" },
+      { name: "Java", level: "level_basic" },
+      { name: "Git & GitHub", level: "level_intermediate" },
+    ]
+  },
+  {
+    category: "cat_telegram",
+    skills: [
+      { name: "Python (aiogram)", level: "level_intermediate" },
+      { name: "Node.js (telegraf)", level: "level_intermediate" },
+      { name: "Bot API", level: "level_intermediate" },
+      { name: "Inline Keyboards", level: "level_experienced" },
     ]
   }
 ];
