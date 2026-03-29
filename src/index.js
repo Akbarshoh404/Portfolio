@@ -2,7 +2,6 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
 import "./style.css"
-import "./mediaqueries.css"
 import { BrowserRouter } from "react-router-dom";
 import './i18n';
 

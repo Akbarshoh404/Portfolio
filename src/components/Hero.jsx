@@ -30,11 +30,11 @@ const Hero = () => {
         <h1 className="title">Akbarshoh Ismatov</h1>
         <p className="section__text__p2">{t("hero_title") || "Frontend Developer"}</p>
         <div className="btn-container">
-          <a href={resume} download="Ismatov Akbarshoh Resume" target="_blank" rel="noreferrer" className="clickable">
-            <button className="btn btn-color-2 clickable">Download CV</button>
+          <a href={resume} download="Ismatov Akbarshoh Resume" target="_blank" rel="noreferrer" className="btn btn-color-2 clickable">
+            Download CV
           </a>
-          <a href="#contact" className="clickable">
-            <button className="btn btn-color-1 clickable">{t("contact_title") || "Contact Info"}</button>
+          <a href="#contact" className="btn btn-color-1 clickable">
+            {t("contact_title") || "Contact Info"}
           </a>
         </div>
         <div id="socials-container">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { webProjects, mobileProjects } from "../data/projects";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -18,7 +18,7 @@ const fadeIn = (direction, type, delay, duration) => ({
 });
 
 const Projects = () => {
-  const [activeTab, setActiveTab] = useState("web");
+  const activeTab = "web";
   const { t, i18n } = useTranslation();
 
   // Pick the right description based on current language
@@ -74,11 +74,11 @@ const Projects = () => {
               <h2 className="experience-sub-title project-title">{project.title}</h2>
               {getDescription(project) && <p className="project-desc">{getDescription(project)}</p>}
               <div className="btn-container">
-                <a href={project.github} target="_blank" rel="noreferrer" className="clickable">
-                  <button className="btn btn-color-2 project-btn clickable">{t("github")}</button>
+                <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-color-2 project-btn clickable">
+                  {t("github")}
                 </a>
-                <a href={project.demo} target="_blank" rel="noreferrer" className="clickable">
-                  <button className="btn btn-color-2 project-btn clickable">{t("live_demo")}</button>
+                <a href={project.demo} target="_blank" rel="noreferrer" className="btn btn-color-2 project-btn clickable">
+                  {t("live_demo")}
                 </a>
               </div>
             </div>

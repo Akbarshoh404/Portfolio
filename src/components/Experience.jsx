@@ -16,10 +16,10 @@ const Experience = () => {
               <h2 className="experience-sub-title">{t(category.category)}</h2>
               <div className="article-container">
                 {category.skills.map((skill, i) => (
-                  <article key={i}>
+                  <article key={i} className="experience-item">
                     <img src={pic8} alt="Experience icon" className="icon" />
-                    <div>
-                      <h3>{skill.name}</h3>
+                    <div className="experience-item__content">
+                      <h3 className="experience-item__title">{skill.name}</h3>
                       <p>{t(skill.level)}</p>
                     </div>
                   </article>

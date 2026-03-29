@@ -31,6 +31,19 @@ const Navbar = () => {
     { name: t("nav_contact"), href: "#contact" },
   ];
 
+  const languageSelect = (className = "") => (
+    <select
+      onChange={changeLanguage}
+      value={i18n.language}
+      className={`language-select clickable ${className}`.trim()}
+      aria-label="Change language"
+    >
+      <option value="en">EN</option>
+      <option value="ru">RU</option>
+      <option value="uz">UZ</option>
+    </select>
+  );
+
   return (
     <>
       <nav id="desktop-nav">
@@ -42,24 +55,8 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', justifySelf: 'end' }}>
-          <select 
-            onChange={changeLanguage} 
-            value={i18n.language} 
-            className="clickable"
-            style={{ 
-              background: 'transparent', 
-              color: 'var(--primary-color)', 
-              border: '1px solid var(--border-color)', 
-              padding: '0.2rem 0.5rem', 
-              borderRadius: '0.5rem',
-              outline: 'none'
-            }}
-          >
-            <option value="en" style={{ color: '#000' }}>EN</option>
-            <option value="ru" style={{ color: '#000' }}>RU</option>
-            <option value="uz" style={{ color: '#000' }}>UZ</option>
-          </select>
+        <div className="nav-actions">
+          {languageSelect()}
           <button onClick={toggleTheme} className="theme-btn clickable" aria-label="Toggle Theme">
              {theme === "light" ? (
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
@@ -71,8 +68,8 @@ const Navbar = () => {
       </nav>
       <nav id="hamburger-nav">
         <div className="logo">Akbarshoh.<span className="highlight">dev</span></div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <button onClick={toggleTheme} className="theme-btn" aria-label="Toggle Theme">
+        <div className="mobile-controls">
+          <button onClick={toggleTheme} className="theme-btn clickable" aria-label="Toggle Theme">
              {theme === "light" ? (
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
              ) : (
@@ -87,6 +84,9 @@ const Navbar = () => {
             </div>
 
           <Drawer open={isOpen} onClose={toggleDrawer} direction="right" className="drawer-content">
+            <div className="drawer-header">
+              {languageSelect("mobile-language-select")}
+            </div>
             <ul className="drawer-links">
               {navLinks.map((link) => (
                 <li key={link.name}>

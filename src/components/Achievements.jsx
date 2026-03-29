@@ -69,7 +69,7 @@ const Achievements = () => {
       img: pennStateImg,
       imgPosition: "top center", // show the Penn State letterhead
     },
-    {
+    /* {
       id: "itacademy",
       icon: "💻",
       title: t("ach_itacademy_title"),
@@ -83,7 +83,7 @@ const Achievements = () => {
         { label: t("ach_itacademy_stat4_label"), value: t("ach_itacademy_stat4_value") },
       ],
       img: null, // Add certificate image path here when available
-    },
+    }, */
   ];
 
   return (
