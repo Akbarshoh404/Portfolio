@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { webProjects, mobileProjects } from "../data/projects";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
@@ -18,7 +18,7 @@ const fadeIn = (direction, type, delay, duration) => ({
 });
 
 const Projects = () => {
-  const activeTab = "web";
+  const [activeTab, setActiveTab] = useState("web");
   const { t, i18n } = useTranslation();
 
   // Pick the right description based on current language
@@ -29,6 +29,9 @@ const Projects = () => {
     return project.description_en;
   };
 
+  const projects = activeTab === "web" ? webProjects : mobileProjects;
+  const isMobileTab = activeTab === "mobile";
+
   return (
     <section id="projects">
       <motion.div variants={fadeIn("up", "tween", 0.2, 1)} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }}>
@@ -36,8 +39,6 @@ const Projects = () => {
         <h1 className="title">{t("projects_title")}</h1>
       </motion.div>
       
-      {/* Mobile Apps tab is intentionally hidden — code kept for future use */}
-      {/* 
       <div className="project-tabs">
         <button 
           className={`tab-btn clickable ${activeTab === "web" ? "active" : ""}`} 
@@ -52,34 +53,49 @@ const Projects = () => {
           {t("mobile_apps")}
         </button>
       </div>
-      */}
 
       <div className="experience-details-container animated-grid" style={{ flexDirection: "column", alignItems: "center" }}>
-        {activeTab === "mobile" && (
-          <motion.p 
-            variants={fadeIn("up", "tween", 0.1, 0.5)}
-            initial="hidden"
-            whileInView="show"
-            style={{ textAlign: "center", marginBottom: "1rem", color: "var(--secondary-color)", fontSize: "1.1rem", maxWidth: "600px" }}
-          >
-            I did these mobile apps for fun but planning to be more serious about Mobile Development.
-          </motion.p>
-        )}
         <div className="about-containers mobile-layout-fix">
-          {(activeTab === "web" ? webProjects : mobileProjects).map((project) => (
+          {projects.map((project) => (
             <div className="details-container color-container project-card" key={project.id}>
-              <div className="project-picture">
-                <img src={project.img} alt={project.title} className="project-img" />
+              <div className={`project-picture ${isMobileTab ? "project-picture-logo" : ""}`}>
+                {project.img ? (
+                  <img src={project.img} alt={project.title} className={`project-img ${isMobileTab ? "project-logo-img" : ""}`} />
+                ) : (
+                  <div className="project-img project-img-placeholder" aria-label={`${project.title} preview`}>
+                    <span>{project.title}</span>
+                  </div>
+                )}
               </div>
               <h2 className="experience-sub-title project-title">{project.title}</h2>
               {getDescription(project) && <p className="project-desc">{getDescription(project)}</p>}
               <div className="btn-container">
-                <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-color-2 project-btn clickable">
-                  {t("github")}
-                </a>
-                <a href={project.demo} target="_blank" rel="noreferrer" className="btn btn-color-2 project-btn clickable">
-                  {t("live_demo")}
-                </a>
+                {project.github ? (
+                  <a href={project.github} target="_blank" rel="noreferrer" className="btn btn-color-2 project-btn clickable">
+                    {t("github")}
+                  </a>
+                ) : isMobileTab ? (
+                  <button type="button" className="btn btn-color-2 project-btn btn-disabled" disabled>
+                    {t("github")}
+                  </button>
+                ) : null}
+                {isMobileTab ? (
+                  project.playMarket ? (
+                    <a href={project.playMarket} target="_blank" rel="noreferrer" className="btn btn-color-2 project-btn clickable">
+                      {t("play_market")}
+                    </a>
+                  ) : (
+                    <button type="button" className="btn btn-color-2 project-btn btn-disabled" disabled>
+                      {t("in_process")}
+                    </button>
+                  )
+                ) : (
+                  project.demo && (
+                    <a href={project.demo} target="_blank" rel="noreferrer" className="btn btn-color-2 project-btn clickable">
+                      {t("live_demo")}
+                    </a>
+                  )
+                )}
               </div>
             </div>
           ))}

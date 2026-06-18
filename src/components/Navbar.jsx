@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { useTranslation } from "react-i18next";
+import { FaChevronDown, FaGlobe } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [theme, setTheme] = useState(localStorage.getItem("theme") || "light");
   const { t, i18n } = useTranslation();
   
@@ -19,8 +21,17 @@ const Navbar = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
   };
 
-  const changeLanguage = (e) => {
-    i18n.changeLanguage(e.target.value);
+  const languages = [
+    { code: "en", label: "EN" },
+    { code: "ru", label: "RU" },
+    { code: "uz", label: "UZ" },
+  ];
+
+  const currentLanguage = languages.find((language) => i18n.language?.startsWith(language.code)) || languages[0];
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+    setIsLanguageOpen(false);
   };
 
   const navLinks = [
@@ -32,16 +43,42 @@ const Navbar = () => {
   ];
 
   const languageSelect = (className = "") => (
-    <select
-      onChange={changeLanguage}
-      value={i18n.language}
-      className={`language-select clickable ${className}`.trim()}
-      aria-label="Change language"
+    <div
+      className={`language-control ${isLanguageOpen ? "open" : ""} ${className}`.trim()}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setIsLanguageOpen(false);
+        }
+      }}
     >
-      <option value="en">EN</option>
-      <option value="ru">RU</option>
-      <option value="uz">UZ</option>
-    </select>
+      <button
+        type="button"
+        className="language-trigger clickable"
+        onClick={() => setIsLanguageOpen((isOpenNow) => !isOpenNow)}
+        aria-label="Change language"
+        aria-expanded={isLanguageOpen}
+      >
+        <FaGlobe className="language-icon" aria-hidden="true" />
+        <span>{currentLanguage.label}</span>
+        <FaChevronDown className="language-chevron" aria-hidden="true" />
+      </button>
+      {isLanguageOpen && (
+        <div className="language-menu" role="listbox" aria-label="Language">
+          {languages.map((language) => (
+            <button
+              type="button"
+              key={language.code}
+              className={`language-option ${currentLanguage.code === language.code ? "active" : ""}`}
+              onClick={() => changeLanguage(language.code)}
+              role="option"
+              aria-selected={currentLanguage.code === language.code}
+            >
+              {language.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
   );
 
   return (

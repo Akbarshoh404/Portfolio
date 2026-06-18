@@ -238,21 +238,86 @@ a {
   justify-self: end;
 }
 
-.language-select {
-  appearance: none;
-  background: transparent;
+.language-control {
+  position: relative;
+  display: inline-block;
   color: var(--primary-color);
-  border: 1px solid var(--border-color);
-  padding: 0.35rem 2rem 0.35rem 0.7rem;
-  border-radius: 999px;
-  outline: none;
-  font: inherit;
-  line-height: 1.2;
   max-width: 100%;
 }
 
-.language-select option {
-  color: #000;
+.language-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 2.7rem;
+  border: 1px solid var(--border-color);
+  border-radius: 999px;
+  padding: 0.55rem 0.8rem;
+  background: var(--card-bg);
+  color: var(--primary-color);
+  font: inherit;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.language-trigger:hover,
+.language-control.open .language-trigger {
+  border-color: var(--primary-color);
+  background: var(--bg-secondary);
+}
+
+.language-icon {
+  width: 0.95rem;
+  height: 0.95rem;
+  flex-shrink: 0;
+}
+
+.language-chevron {
+  width: 0.7rem;
+  height: 0.7rem;
+  color: var(--secondary-color);
+  transition: transform 0.2s ease;
+}
+
+.language-control.open .language-chevron {
+  transform: rotate(180deg);
+}
+
+.language-menu {
+  position: absolute;
+  top: calc(100% + 0.45rem);
+  right: 0;
+  z-index: 1200;
+  display: grid;
+  gap: 0.25rem;
+  min-width: 100%;
+  padding: 0.35rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.language-option {
+  border: none;
+  background: transparent;
+  color: var(--primary-color);
+  border-radius: 0.7rem;
+  padding: 0.6rem 0.8rem;
+  font: inherit;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.language-option:hover,
+.language-option.active {
+  background: var(--primary-color);
+  color: var(--bg-color);
 }
 
 /* HAMBURGER MENU */
@@ -677,16 +742,50 @@ article .icon {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-picture-logo {
+  background:
+    radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.12), transparent 28%),
+    var(--bg-secondary);
 }
 
 .project-img {
-  border-radius: 1.5rem;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  height: auto;
+  height: 100%;
   object-fit: cover;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.project-logo-img {
+  width: min(70%, 180px);
+  height: min(70%, 180px);
+  object-fit: contain;
+  border-radius: 1.25rem;
+}
+
+.project-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(102, 126, 234, 0.18), transparent 28%),
+    linear-gradient(135deg, var(--bg-secondary), var(--card-bg));
+  color: var(--primary-color);
+}
+
+.project-img-placeholder span {
+  font-size: clamp(1.25rem, 5vw, 2rem);
+  font-weight: 700;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
 .project-title {
@@ -706,10 +805,25 @@ article .icon {
 
 .project-card .btn-container {
   width: 100%;
+  flex-wrap: nowrap;
+  gap: 0.75rem;
 }
 
 .project-card .btn {
-  flex: 1 1 140px;
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 0.9rem clamp(0.7rem, 2vw, 1.25rem);
+  white-space: nowrap;
+}
+
+.btn-disabled,
+.btn-disabled:hover {
+  background: var(--bg-secondary);
+  color: var(--secondary-color);
+  border-color: var(--border-color);
+  cursor: not-allowed;
+  opacity: 0.72;
+  transform: none;
 }
 
 /* CONTACT */

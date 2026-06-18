@@ -15,10 +15,14 @@ export const experienceData = [
   {
     category: "cat_mobile",
     skills: [
+      { name: "React Native", level: "level_intermediate" },
       { name: "Flutter", level: "level_intermediate" },
       { name: "Dart", level: "level_intermediate" },
       { name: "Firebase", level: "level_intermediate" },
       { name: "Android Studio", level: "level_intermediate" },
+      { name: "Expo", level: "level_intermediate" },
+      { name: "Mobile UI/UX", level: "level_intermediate" },
+      { name: "Codebase", level: "level_intermediate" },
     ]
   },
   {
