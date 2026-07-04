@@ -17,6 +17,11 @@ import sudokitten from "../assets/mobileapps/sudokitten.png";
 import tictactoe from "../assets/mobileapps/tictactoe.png";
 import uybek from "../assets/mobileapps/uybek.png";
 
+
+import brilliant from "../assets/brilliant.jpg"
+import kink from "../assets/kink.jpg"
+
+
 export const webProjects = [
   {
     id: 1,
@@ -96,6 +101,32 @@ export const webProjects = [
     description_uz:
       "Moda brendi uchun zamonaviy elektron do'kon — mahsulotlar katalogi, xarid savati va minimalist dizayn bilan.",
   },
+  {
+    id: 7,
+    title: "Brilliant Tour",
+    img: brilliant,
+    github: "https://github.com/Akbarshoh404/Brilliant-tour-website.git",
+    demo: "https://brilliant-tour-website.vercel.app/",
+    description_en:
+      "A modern travel agency website offering international and domestic tour packages, featuring destination browsing, detailed trip information, online booking, and a responsive user-friendly design.",
+    description_ru:
+      "Современный сайт туристического агентства с международными и внутренними турами. Включает каталог направлений, подробную информацию о поездках, онлайн-бронирование и адаптивный дизайн.",
+    description_uz:
+      "Xalqaro va O‘zbekiston bo‘ylab sayohat turlarini taklif qiluvchi zamonaviy turizm agentligi sayti. Unda yo‘nalishlar katalogi, sayohatlar haqida batafsil ma’lumot, onlayn bron qilish va barcha qurilmalarga mos dizayn mavjud.",
+  },
+  {
+    id: 8,
+    title: "Kink",
+    img: kink,
+    github: "https://github.com/Akbarshoh404/Kink.git",
+    demo: "https://kinkmvp.netlify.app/",
+    description_en:
+      "A modern marketplace for local sneaker stores, offering designer footwear from brands like Nike, Adidas, Puma, and more. Features product browsing, detailed listings, and a clean, responsive shopping experience.",
+    description_ru:
+      "Современный маркетплейс для местных магазинов кроссовок с дизайнерской обувью от Nike, Adidas, Puma и других брендов. Включает каталог товаров, подробные карточки и удобный адаптивный интерфейс.",
+    description_uz:
+      "Mahalliy krossovka do‘konlari uchun zamonaviy marketplace. Nike, Adidas, Puma va boshqa mashhur brendlarning dizayner krossovkalarini taklif qiladi. Mahsulotlar katalogi, batafsil sahifalar va qulay, moslashuvchan dizaynga ega.",
+  },
 ];
 
 export const mobileProjects = [
@@ -105,7 +136,8 @@ export const mobileProjects = [
     img: catloop,
     logoPath: "src/assets/mobileapps/catloop.png",
     github: "https://github.com/Akbarshoh404/CatLoop.git",
-    playMarket: "https://play.google.com/store/apps/details?id=uz.angrykitten.catloopak&pcampaignid=web_share",
+    playMarket:
+      "https://play.google.com/store/apps/details?id=uz.angrykitten.catloopak&pcampaignid=web_share",
     description_en:
       "An addictive arcade game where players guide a cat through increasingly challenging levels with fast-paced gameplay and responsive controls.",
     description_ru:
@@ -119,7 +151,8 @@ export const mobileProjects = [
     img: catris,
     logoPath: "src/assets/mobileapps/catris.png",
     github: "https://github.com/Akbarshoh404/Catris.git",
-    playMarket: "",
+    playMarket:
+      "https://play.google.com/store/apps/details?id=uz.angrykitten.catris&pcampaignid=web_share",
     description_en:
       "A modern take on the classic Tetris experience featuring smooth animations, score tracking, and engaging puzzle gameplay.",
     description_ru:
@@ -147,7 +180,8 @@ export const mobileProjects = [
     img: mathrow,
     logoPath: "src/assets/mobileapps/mathrow.png",
     github: "",
-    playMarket: "",
+    playMarket:
+      "https://play.google.com/store/apps/details?id=uz.angrykitten.mathrow&pcampaignid=web_share",
     description_en:
       "A unique mathematical puzzle game inspired by Sudoku, challenging players with logic-based number mechanics.",
     description_ru:
@@ -161,7 +195,8 @@ export const mobileProjects = [
     img: nerva,
     logoPath: "src/assets/mobileapps/nerva.png",
     github: "https://github.com/Akbarshoh404/Nerva.git",
-    playMarket: "",
+    playMarket:
+      "https://play.google.com/store/apps/details?id=uz.angrykitten.nervakb&pcampaignid=web_share",
     description_en:
       "A human benchmark application that measures reaction time, memory, accuracy, and cognitive performance through interactive tests.",
     description_ru:
@@ -189,7 +224,8 @@ export const mobileProjects = [
     img: pulchi,
     logoPath: "src/assets/mobileapps/pulchi.png",
     github: "https://github.com/Akbarshoh404/Budget-Tracker.git",
-    playMarket: "",
+    playMarket:
+      "https://play.google.com/store/apps/details?id=uz.angrykitten.pulchi&pcampaignid=web_share",
     description_en:
       "A personal finance and budget tracking application that helps users manage expenses, income, and savings effectively.",
     description_ru:
@@ -203,7 +239,8 @@ export const mobileProjects = [
     img: shiftball,
     logoPath: "src/assets/mobileapps/shiftball.png",
     github: "https://github.com/Akbarshoh404/ShiftBall.git",
-    playMarket: "https://play.google.com/store/apps/details?id=uz.angrykitten.shiftballak&pcampaignid=web_share",
+    playMarket:
+      "https://play.google.com/store/apps/details?id=uz.angrykitten.shiftballak&pcampaignid=web_share",
     description_en:
       "A fast-paced arcade game focused on timing, precision, and quick decision-making mechanics.",
     description_ru:
@@ -217,7 +254,8 @@ export const mobileProjects = [
     img: spinject,
     logoPath: "src/assets/mobileapps/spinject.jpg",
     github: "https://github.com/Akbarshoh404/Spinject.git",
-    playMarket: "https://play.google.com/store/apps/details?id=uz.angrykitten.spinjectak&pcampaignid=web_share",
+    playMarket:
+      "https://play.google.com/store/apps/details?id=uz.angrykitten.spinjectak&pcampaignid=web_share",
     description_en:
       "An action-packed game featuring spinning mechanics, challenging levels, and engaging gameplay progression.",
     description_ru:
@@ -231,7 +269,8 @@ export const mobileProjects = [
     img: sudokitten,
     logoPath: "src/assets/mobileapps/sudokitten.png",
     github: "https://github.com/Akbarshoh404/AngryKittenSudoku.git",
-    playMarket: "https://play.google.com/store/apps/details?id=uz.angrykitten.sudoku&pcampaignid=web_share",
+    playMarket:
+      "https://play.google.com/store/apps/details?id=uz.angrykitten.sudoku&pcampaignid=web_share",
     description_en:
       "A Sudoku puzzle game with multiple difficulty levels, clean design, and a relaxing user experience.",
     description_ru:
@@ -245,7 +284,8 @@ export const mobileProjects = [
     img: tictactoe,
     logoPath: "src/assets/mobileapps/tictactoe.png",
     github: "https://github.com/Akbarshoh404/Angry-Kitten-TicTacToe.git",
-    playMarket: "",
+    playMarket:
+      "https://play.google.com/store/apps/details?id=uz.angrykitten.tictactoe&pcampaignid=web_share",
     description_en:
       "A classic Tic Tac Toe game featuring a modern interface, smooth gameplay, and local multiplayer support.",
     description_ru:
@@ -259,7 +299,8 @@ export const mobileProjects = [
     img: uybek,
     logoPath: "src/assets/mobileapps/uybek.png",
     github: "",
-    playMarket: "https://play.google.com/store/apps/details?id=uz.angrykitten.uybekak&pcampaignid=web_share",
+    playMarket:
+      "https://play.google.com/store/apps/details?id=uz.angrykitten.uybekak&pcampaignid=web_share",
     description_en:
       "A real estate marketplace that allows users to buy, sell, and rent properties through a streamlined mobile experience.",
     description_ru:
